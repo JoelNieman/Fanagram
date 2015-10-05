@@ -1,25 +1,113 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Fanagram" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="insert word here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AR5-FO-5fk">
+                                <rect key="frame" x="93" y="269" width="126.5" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aSb-yJ-Wa4">
+                                <rect key="frame" x="16" y="382" width="284" height="30"/>
+                                <color key="backgroundColor" red="0.80000001192092896" green="0.80000001192092896" blue="0.80000001192092896" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="New Game"/>
+                                <connections>
+                                    <action selector="newGame:" destination="BYZ-38-t0r" eventType="touchUpInside" id="g3K-Rg-KAq"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EB6-xo-dgr">
+                                <rect key="frame" x="20" y="328" width="276" height="30"/>
+                                <color key="backgroundColor" red="0.80000001192092896" green="0.80000001192092896" blue="0.80000001192092896" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Submit Word">
+                                    <color key="titleColor" red="0.50196081399917603" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="submitWord:" destination="BYZ-38-t0r" eventType="touchUpInside" id="N8t-GK-Ibc"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="vBl-HB-cDK">
+                                <rect key="frame" x="16" y="28" width="280" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="nJu-Jw-Cks"/>
+                                    <constraint firstAttribute="width" constant="280" id="w5Z-Ll-uM4"/>
+                                </constraints>
+                                <color key="textColor" red="0.0" green="0.50196081399917603" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Anagram:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pp0-yM-foU">
+                                <rect key="frame" x="20" y="195" width="80" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="anagram" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vGe-FG-ecV">
+                                <rect key="frame" x="108" y="191" width="96" height="29"/>
+                                <color key="backgroundColor" red="0.80000001192092896" green="0.80000001192092896" blue="0.80000001192092896" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="SQB-Mm-yXn">
+                                <rect key="frame" x="16" y="420" width="280" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="a7I-2O-aKz"/>
+                                    <constraint firstAttribute="width" constant="280" id="duw-FC-3kl"/>
+                                </constraints>
+                                <color key="textColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.60000002384185791" green="0.60000002384185791" blue="0.60000002384185791" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="vGe-FG-ecV" firstAttribute="leading" secondItem="pp0-yM-foU" secondAttribute="trailing" constant="8" id="58p-P2-WLC"/>
+                            <constraint firstItem="aSb-yJ-Wa4" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-4" id="FcZ-Yj-p44"/>
+                            <constraint firstItem="AR5-FO-5fk" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="HTV-iZ-per"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="vBl-HB-cDK" secondAttribute="trailing" id="MXB-hi-MFy"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="SQB-Mm-yXn" secondAttribute="leading" id="SOg-UA-AGg"/>
+                            <constraint firstItem="aSb-yJ-Wa4" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Vaq-tY-BoQ"/>
+                            <constraint firstItem="AR5-FO-5fk" firstAttribute="top" secondItem="vGe-FG-ecV" secondAttribute="bottom" constant="49" id="Xa7-ka-sGf"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="EB6-xo-dgr" secondAttribute="trailing" constant="4" id="bCu-Xd-Ci0"/>
+                            <constraint firstItem="AR5-FO-5fk" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="dO4-9L-FGA"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="vBl-HB-cDK" secondAttribute="leading" id="dPa-R4-HqB"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="SQB-Mm-yXn" secondAttribute="bottom" constant="20" id="lRf-Yh-j3Y"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="EB6-xo-dgr" secondAttribute="leading" id="nAA-yn-dRE"/>
+                            <constraint firstItem="EB6-xo-dgr" firstAttribute="top" secondItem="AR5-FO-5fk" secondAttribute="bottom" constant="29" id="pVL-vP-T5P"/>
+                            <constraint firstItem="vBl-HB-cDK" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="rhm-My-SJZ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="SQB-Mm-yXn" secondAttribute="trailing" id="rjI-RG-qYt"/>
+                            <constraint firstItem="vGe-FG-ecV" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="sOm-pN-B34"/>
+                            <constraint firstItem="aSb-yJ-Wa4" firstAttribute="top" secondItem="EB6-xo-dgr" secondAttribute="bottom" constant="24" id="uyB-zk-Abi"/>
+                            <constraint firstItem="EB6-xo-dgr" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="wEE-ed-HeN"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="aSb-yJ-Wa4" secondAttribute="trailing" id="zlS-o4-U7R"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="correctWordsDisplay" destination="vBl-HB-cDK" id="T4I-TU-lCG"/>
+                        <outlet property="currentAnagram" destination="vGe-FG-ecV" id="sKx-wJ-nTt"/>
+                        <outlet property="endGameDisplay" destination="SQB-Mm-yXn" id="3Zt-zj-U8S"/>
+                        <outlet property="submitWordButton" destination="EB6-xo-dgr" id="Rh6-vi-CCV"/>
+                        <outlet property="userInput" destination="AR5-FO-5fk" id="jiw-Au-AUE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="200" y="227"/>
         </scene>
     </scenes>
 </document>
